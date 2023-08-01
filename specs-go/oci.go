@@ -43,7 +43,7 @@ func ApplyEditsToOCISpec(config *spec.Spec, edits *ContainerEdits) error {
 		config.Process.Env = append(config.Process.Env, edits.Env...)
 	}
 
-	for _, d := range edits.DevicesNodes {
+	for _, d := range edits.DeviceNodes {
 		if config.Linux == nil {
 			config.Linux = &spec.Linux{}
 		}

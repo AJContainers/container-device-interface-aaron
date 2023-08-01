@@ -29,10 +29,10 @@ type Device struct {
 
 // ContainerEdits are edits a container runtime must make to the OCI spec to expose the device
 type ContainerEdits struct {
-	Env          []string      `json:"env,omitempty"`
-	DevicesNodes []*DeviceNode `json:"devicesNodes,omitempty"`
-	Hooks        []*Hook       `json:"hooks,omitempty"`
-	Mounts       []*Mount      `json:"mounts,omitempty"`
+	Env         []string      `json:"env,omitempty"`
+	DeviceNodes []*DeviceNode `json:"deviceNodes,omitempty"`
+	Hooks       []*Hook       `json:"hooks,omitempty"`
+	Mounts      []*Mount      `json:"mounts,omitempty"`
 }
 
 // DeviceNode represents a device node that needs to be added to the OCI spec
