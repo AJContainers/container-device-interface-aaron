@@ -1,0 +1,32 @@
+{
+  "cdiVersion": "0.6.0",
+  "kind": "vendor.com/device",
+  "devices": [
+    {
+      "name": "myDevice",
+      "containerEdits": {
+        "deviceNodes": [
+          {"hostPath": "/vendorroot/dev/card1", "path": "/dev/card1"},
+          {"path": "/dev/card2"}
+        ]
+      }
+    }
+  ],
+  "containerEdits": {
+    "env": [
+      "FOO=CDI_SPEC",
+      "BAR=BARVALUE1"
+    ],
+    "deviceNodes": [
+      {"path": "/dev/vendorctl", "uid": 1000, "gid": 1000}
+    ],
+    "mounts": [
+      {"hostPath": "/bin/vendorBin", "containerPath": "/bin/vendorBin"},
+      {"hostPath": "/usr/lib/libVendor.so.0", "containerPath": "/usr/lib/libVendor.so.0"}
+    ],
+    "hooks": [
+      {"hookName": "createContainer", "path": "/bin/vendor-hook"},
+      {"hookName": "startContainer", "path": "/usr/bin/ldconfig"}
+    ]
+  }
+}
